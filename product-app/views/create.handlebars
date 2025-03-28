@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <form action="/create" method="post">
+    <div class="mb-3">
+        <lable for="id" class="form-label">ID:</lable>
+        <input name="id" type="text" class="form-control">
+    </div>
+     <div class="mb-3">
+        <lable for="name" class="form-label">Ten san pham:</lable>
+        <input name="name" type="text" class="form-control">
+    </div>
+     <div class="mb-3">
+        <lable for="price" class="form-label">Gia san pham:</lable>
+        <input name="price" type="text" class="form-control">
+    </div>
+     <div class="mb-3">
+        <lable for="quantity" class="form-label">So luong ton:</lable>
+        <input name="quantity" type="text" class="form-control">
+    </div>
+     <div class="mb-3">
+        <lable for="file" class="form-label"></lable>
+        <input name="file" type="file" class="form-control" accept="image/*">
+    </div>
+    <button class="btn btn-primary" type="submit">Them san pham</button>
+    
+    </form>
+
+    <script src="/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

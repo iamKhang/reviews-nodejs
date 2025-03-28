@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="d-flex justify-content-center align-items-center">
+            <title class="text-xl-center">Danh sach san pham</title>
+        </header>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="">
+                    <tr>
+                        <th>ID</th>
+                        <th>Ten</th>
+                        <th>Price</th>
+                        <th>So luong ton</th>
+                        <th>Anh</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody class="">
+                    {{#each products}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{name}}</td>
+                        <td>{{price}}</td>
+                        <td>{{quantity}}</td>
+                        <td>
+                            <img src="{{imageUrl}}" alt="{{name}}">
+                        </td>
+                        <td>Action</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
