@@ -1,0 +1,86 @@
+<!-- File: views/index.handlebars -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Danh sách điện thoại</h1>
+            <a href="/create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> Thêm mới
+            </a>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Ảnh</th>
+                        <th>Số seri</th>
+                        <th>Tên điện thoại</th>
+                        <th>Giá</th>
+                        <th>Thương hiệu</th>
+                        <th>Năm ra mắt</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each mobiles}}
+                    <tr>
+                        <td><img src="{{this.imageUrl}}" alt="{{this.name}}"
+                                style="width: 100px; height: 100px; object-fit: cover;"></td>
+                        <td>{{this.serialNumber}}</td>
+                        <td>{{this.name}}</td>
+                        <td>{{this.price}} VNĐ</td>
+                        <td>{{this.brand}}</td>
+                        <td>{{this.releaseYear}}</td>
+                        <td>
+                            <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#deleteModal{{this.serialNumber}}">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Delete Confirmation Modal -->
+                    <div class="modal fade" id="deleteModal{{this.serialNumber}}" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Xác nhận xóa</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Bạn có chắc chắn muốn xóa "{{this.name}}"?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <form action="/{{this.serialNumber}}" method="POST" style="display: inline;">
+                                        <button type="submit" class="btn btn-danger">Xóa</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
