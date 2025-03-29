@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Store</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="d-flex justify-content-center align-items-center">
+            Keyboard Store
+        </header>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Brand</th>
+                        <th>Year</th>
+                        <th>Image</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each keyboards}}
+                    <tr class="align-content-center">
+                        <td>{{id}}</td>
+                        <td>{{name}}</td>
+                        <td>{{price}}</td>
+                        <td>{{quantity}}</td>
+                        <td>{{brand}}</td>
+                        <td>{{year}}</td>
+                        <td>
+                            <img src="{{imageUrl}}" alt="" srcset="" style="width: 70px; height: 100px; object-fit: contain;">
+                        </td>
+                        <td>
+                            <form action="/delete/{{id}}" method="post">
+                                <button type="submit" class="btn btn-danger">Xoa</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

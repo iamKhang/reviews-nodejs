@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Store</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="d-flex justify-content-center align-items-center">
+            Add Keyboard
+        </header>
+        <form action="/create" method="post" enctype="multipart/form-data">
+            <div class="">
+                <label for="id" class="form-label">ID:</label>
+                <input type="text" name="id" id="" class="form-control" />
+            </div>
+            <div class="">
+                <label for="id" class="form-label">Name:</label>
+                <input type="text" name="name" id="" class="form-control" />
+            </div>
+
+            <div class="">
+                <label for="id" class="form-label">So luong:</label>
+                <input type="number" name="quantity" id="" class="form-control" />
+            </div>
+
+            <div class="">
+                <label for="id" class="form-label">Gia:</label>
+                <input type="number" name="price" id="" class="form-control" />
+            </div>
+
+            <div class="">
+                <label for="id" class="form-label">Thuong Hieu</label>
+                <input type="text" name="brand" id="" class="form-control" />
+            </div>
+
+            <div class="">
+                <label for="id" class="form-label">Nam</label>
+                <input type="text" name="year" id="" class="form-control" />
+            </div>
+
+            <div class="">
+                <label for="id" class="form-label">Anh:</label>
+                <input type="file" name="image" id="" class="form-control" />
+            </div>
+            <button class="btn btn-primary" type="submit">
+                Them ban phim moi
+            </button>
+
+        </form>
+    </div>
+
+    <script src="/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
