@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sach bai bao</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="conainer">
+        <div class="">
+            <h1>Danh sach  bai bao</h1>
+            <a href="/">Ve trang chu</a>
+        </div>
+
+        <form action="/create" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="">ISBN:</label>
+          <input type="text" name="isbn" id="" class="form-control" placeholder="" aria-describedby="helpId">
+        </div>
+        <div class="form-group">
+          <label for="">Name</label>
+          <input type="text" name="name" id="" class="form-control" placeholder="" aria-describedby="helpId">
+        </div>
+        <div class="form-group">
+          <label for="">Publisher</label>
+          <input type="text" name="publisher" id="" class="form-control" placeholder="" aria-describedby="helpId">
+        </div>
+        <div class="form-group">
+          <label for="">Publish Year</label>
+          <input type="number" name="publishYear" id="" class="form-control" placeholder="" aria-describedby="helpId">
+        </div>
+        <div class="form-group">
+          <label for="">Pages</label>
+          <input type="number" name="pages" id="" class="form-control" placeholder="" aria-describedby="helpId">
+        </div>
+        <div class="form-group">
+          <label for=""></label>
+          <input type="file" name="image" id="" class="form-control" placeholder="" aria-describedby="helpId">
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Them bai bao
+        </button>
+        
+        </form>
+    </div>
+</body>
+</html>

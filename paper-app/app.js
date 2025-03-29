@@ -1,26 +1,28 @@
-const express = require('express')
-const exphbs = require('express-handlebars')
-
-const path = require('path')
-
+const express = require('express');
+const exphbs = require('express-handlebars');
+const path = require('path');
+const router = require('./routers/paper.router');
 require('dotenv').config()
 
 const app = express()
 
-const port = 3000
-
 const hbs = exphbs.create({
-    defaultLayout: false,
-    extname: '.handlebars'
+    defaultLayout: false
 })
+
 app.engine('handlebars', hbs.engine)
 app.set('view engine', 'handlebars')
-app.set('views', './views')
-app.use(express.json())
-app.use(express.urlencoded({extended: true}))
-app.use(express.static(path.join(__dirname, 'public')))
-app.use('/', require('./routes/index') )
+app.set('views', path.join(__dirname, 'views'))
 
-app.listen(port, ()=>{
-    console.log('Ung dung da duoc chay o port 3000')
+app.use('/', router)
+app.use(express.json())
+app.use(express.urlencoded({
+    extended: true
+}))
+app.use(express.static(path.join(__dirname, 'public')))
+
+
+
+app.listen(3000, ()=>{
+    console.log("Ung dung da duoc khoi dong");
 })
