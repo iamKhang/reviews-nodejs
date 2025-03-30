@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="d-flex justify-content-between align-items-center">
+            <h1>
+                Danh sach bai viet
+            </h1>
+            <a href="/create" class="btn btn-primary">Them bai viet</a>
+        </header>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Content</th>
+                        <th>Author</th>
+                        <th>Date</th>
+                        <th>Tags</th>
+                        <th>Image</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {{#each posts}}
+                    <tr>
+                        <td>{{isbn}}</td>
+                        <td>{{title}}</td>
+                        <td>{{content}}</td>
+                        <td>{{autdor}}</td>
+                        <td>{{date}}</td>
+                        <td>{{tags}}</td>
+                        <td>
+                            <img src="{{iamgeUrl}}" alt="{{name}}"
+                                style="widtd: 50px; height: 50px; object-fit: contain;">
+                        </td>
+                        <td>
+                            <form action="/delete/{{isbn}}" metdod="post">
+                                <button type="submit" class="btn btn-danger"
+                                    onclick="return confirm('Ban co muon xoa bai viet khong?')">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="d-flex justify-content-between align-items-center">
+            <h1>
+                Them bai viet
+            </h1>
+            <a class="btn btn-primary" href="/">Tro ve trang chu</a>
+        </header>
+
+        <form action="/create" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="" class="form-label">ID</label>
+                <input type="text" class="form-control" name="isbn" required title="Tieu de khong duoc bo trong">
+            </div>
+             <div class="form-group">
+                <label for="" class="form-label">Titler</label>
+                <input type="text" class="form-control" name="title" required title="Tieu de khong duoc bo trong">
+            </div>
+             <div class="form-group">
+                <label for="" class="form-label">Content:</label>
+                <input type="text" class="form-control" name="content" required title="Noi dung khong duoc bo trong">
+            </div>
+             <div class="form-group">
+                <label for="" class="form-label">Author</label>
+                <input type="text" class="form-control" required title="Bai viet phai co tac gia">
+            </div>
+             <div class="form-group">
+                <label for="" class="form-label">Date</label>
+                <input type="date" class="form-control" name="date"  min="2025-3-3" max="2025-3-30" required>
+            </div>
+             <div class="form-group">
+                <label for="" class="form-label">Tags</label>
+                <input type="text" class="form-control" name="tags" required>
+            </div>
+             <div class="form-group">
+                <label for="" class="form-label">Image</label>
+                <input type="file" class="form-control" name="image" required accept="image/*">
+            </div>
+
+            <button type="submit" class="btn btn-success mt-4">Add Post</button>
+        </form>
+    </div>
+</body>
+
+</html>
