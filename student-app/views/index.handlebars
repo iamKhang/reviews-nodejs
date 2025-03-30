@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sinh viên</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="d-flex justify-content-between align-items-center">
+            <h1>Danh sách sinh viên</h1>
+            <a href="/create" class="btn btn-primary">Thêm sinh viên</a>
+        </header>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Phone</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each students}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{name}}</td>
+                    <td>{{dob}}</td>
+                    <td>{{phoneNumber}}</td>
+                    <td>
+                        <img src="{{imageUrl}}" alt="{{name}}" style="height: 50px; width: 50px; object-fit: cover;">
+                    </td>
+                    <td>
+                        <form action="/delete/{{id}}" method="post">
+                            <button 
+                                type="submit" 
+                                class="btn btn-danger" 
+                                onclick="return confirm('Bạn có chắc muốn xóa sinh viên này không?')">
+                                Xóa
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

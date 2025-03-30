@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Manager</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                Book List
+            </h1>
+            <a href="/create">Go to add book</a>
+        </header>
+        <div class="">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ISBN</th>
+                        <th>Name</th>
+                        <th>Publisher</th>
+                        <th>Publish Year</th>
+                        <th>Pages</th>
+                        <th>Image</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each books}}
+                    <tr>
+                        <td>{{isbn}}</td>
+                        <td>{{name}}</td>
+                        <td>{{publisher}}</td>
+                        <td>{{publishYear}}</td>
+                        <td>{{pages}}</td>
+                        <td>
+                            <img src="{{imageUrl}}" alt="{{name}}" style="height: 50px; widtd: 50px; object-fit: cover;">
+                        </td>
+                        <td>
+                            <form action="/detete/{{isbn}}" method="post">
+                                <button type="submit" onclick="return confirm('Ban co muon xoa khong')" class="btn btn primary">
+                                    Xoa
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

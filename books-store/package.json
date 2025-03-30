@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "aws-sdk": "^2.1692.0",
+    "bootstrap": "^5.3.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.1",
+    "multer": "^1.4.5-lts.2",
+    "nodemon": "^3.1.9",
+    "uuid": "^11.1.0"
+  },
+  "name": "books-store",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Them sinh vien</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="d-flex justify-content-between align-items-center">
+            <h1>Them sinh vien</h1>
+            <a href="/" class="btn btn-primary">Ve trang chu</a>
+        </header>
+        <form action="/create" method="post" enctype="multipart/form-data">
+            <div>
+                <label class="form-label">ID</label>
+                <input type="text" class="form-control" name="id" required minlength="3" maxlength="20"
+                    pattern="[a-zA-Z0-9]+" title="ID chỉ chứa chữ cái và số, từ 3-20 ký tự">
+            </div>
+            <div>
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" required minlength="2" maxlength="50"
+                    pattern="[a-zA-Z\s]+" title="Tên chỉ chứa chữ cái và khoảng trắng, từ 2-50 ký tự">
+            </div>
+            <div>
+                <label class="form-label">Dob</label>
+                <input type="date" class="form-control" name="dob" required min="1900-01-01" max="2025-03-29">
+            </div>
+            <div>
+                <label class="form-label">Phone</label>
+                <input type="text" class="form-control" name="phoneNumber" required pattern="[0-9]{10}"
+                    title="Số điện thoại phải có đúng 10 chữ số">
+            </div>
+            <div>
+                <label class="form-label">Image</label>
+                <input type="file" name="image" class="form-control" accept="image/*" required>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                Thêm sinh viên
+            </button>
+        </form>
+    </div>
+</body>
+
+</html>

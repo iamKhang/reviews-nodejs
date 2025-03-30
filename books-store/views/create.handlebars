@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Manager</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                Add Book
+            </h1>
+            <a href="/">Go to home</a>
+        </header>
+        <form action="/create" method="post" enctype="multipart/form-data">
+            <div>
+                <label class="form-label" for="">isbn</label>
+                <input class="form-control" type="text" name="isbn">
+            </div>
+            <div>
+                <label class="form-label" for="">name</label>
+                <input class="form-control" type="text" name="name">
+            </div>
+            <div>
+                <label class="form-label" for="">publisher</label>
+                <input class="form-control" type="text" name="publisher">
+            </div>
+            <div>
+                <label class="form-label" for="">publishYear</label>
+                <input class="form-control" type="number" name="publishYear">
+            </div>
+            <div>
+                <label class="form-label" for="">pages</label>
+                <input class="form-control" type="number" name="pages">
+            </div>
+            <div>
+                <label class="form-label" for="">image</label>
+                <input class="form-control" type="file" accept="image/*" name="image">
+            </div>
+            <div>
+                <button type="submit">
+                    Add Book
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
