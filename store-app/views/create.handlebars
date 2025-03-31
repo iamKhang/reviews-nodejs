@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store List</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Add Store</h1>
+            <a href="/">List Store</a>
+        </header>
+        <div class="card">
+            <div class="card-body">
+                <form action="/create"  method="post" enctype="multipart/form-data">
+                    <div class="mt-3">
+                        <label for="" class="form-label" >Name</label>
+                        <input type="text" class="form-control" name="name">
+                        {{#if (lookup errors 'name')}}
+                        <p class="text-danger">
+                            {{lookup errors 'name'}}
+                        </p>
+                        {{/if}}
+                    </div>
+
+                    <div class="mt-3">
+                        <label for="" class="form-label">Manager</label>
+                        <input type="text" class="form-control" name="manager">
+                        {{#if (lookup errors 'manager')}}
+                        <p class="text-danger">
+                            {{lookup errors 'manager'}}
+                        </p>
+                        {{/if}}
+                    </div>
+
+                    <div class="mt-3">
+                        <label for="" class="form-label">Address</label>
+                        <input type="text" class="form-control" name="address">
+                        {{#if (lookup errors 'address')}}
+                        <p class="text-danger">
+                            {{lookup errors 'address'}}
+                        </p>
+                        {{/if}}
+                    </div>
+
+                    <div class="mt-3">
+                        <label for="" class="form-label" >Email</label>
+                        <input type="email" class="form-control" name="email">
+                        {{#if (lookup errors 'email')}}
+                        <p class="text-danger">
+                            {{lookup errors 'email'}}
+                        </p>
+                        {{/if}}
+                    </div>
+
+                    <div class="mt-3">
+                        <label for="" class="form-label">Image</label>
+                        <input type="file" class="form-control" name="image">
+                        {{#if (lookup errors 'image')}}
+                        <p class="text-danger">
+                            {{lookup errors 'image'}}
+                        </p>
+                        {{/if}}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mt-3">
+                        Add Store
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
