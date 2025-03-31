@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                Add Subject
+            </h1>
+            <a href="/" class="btn btn-primary">List subject</a>
+        </header>
+        <form action="/create" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="id">ID:</label>
+                <input type="text" class="form-control" name="id" required pattern="^\S+(\s\S+)*$"
+                    title="Không chứa nhiều dấu cách liên tiếp" oninvalid="this.setCustomValidity('Vui lòng nhập ID')"
+                    oninput="this.setCustomValidity('')">
+            </div>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" name="name" required pattern="^[a-zA-Z0-9]+(\s[a-zA-Z0-9]+)*$"
+                    title="Tên không được chứa ký tự đặc biệt, chỉ chứa chữ cái, số và khoảng trắng"
+                    oninvalid="this.setCustomValidity('Vui lòng nhập tên')" oninput="this.setCustomValidity('')">
+            </div>
+            <div>
+                <label for="lecture">Lecture:</label>
+                <input type="text" class="form-control" name="lecture" required pattern="^\S+(\s\S+)*$"
+                    title="Không chứa nhiều dấu cách liên tiếp"
+                    oninvalid="this.setCustomValidity('Vui lòng nhập giảng viên')" oninput="this.setCustomValidity('')">
+            </div>
+            <div>
+                <label for="credit">Credit:</label>
+                <input type="number" class="form-control" name="credit" required min="0"
+                    title="Số tín chỉ phải là số nguyên dương"
+                    oninvalid="this.setCustomValidity('Vui lòng nhập số tín chỉ')" oninput="this.setCustomValidity('')">
+            </div>
+            <div>
+                <label for="startAt">Start At:</label>
+                <input type="date" class="form-control" name="startAt" required min="2025-03-31"
+                    title="Ngày bắt đầu từ 31-03-2025 trở đi"
+                    oninvalid="this.setCustomValidity('Vui lòng chọn ngày bắt đầu')"
+                    oninput="this.setCustomValidity('')">
+            </div>
+            <div>
+                <label for="image">Image:</label>
+                <input type="file" accept="image/*" class="form-control" name="image" required
+                    title="Chỉ chấp nhận file hình ảnh"
+                    oninvalid="this.setCustomValidity('Vui lòng chọn một file hình ảnh')"
+                    oninput="this.setCustomValidity('')">
+            </div>
+            <button class="btn btn-primary" type="submit">Add Subject</button>
+        </form>
+    </div>
+</body>
+
+</html>

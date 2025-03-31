@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                List Subject
+            </h1>
+            <a href="/create" class="btn btn-primary">Add subject</a>
+        </header>
+
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Lecture</th>
+                    <th>Credit</th>
+                    <th>Start At</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each subjects}}
+                <tr>
+                    <th>{{id}}</th>
+                    <th>{{name}}</th>
+                    <th>{{lecture}}</th>
+                    <th>{{credit}}</th>
+                    <th>{{startAt}}</th>
+                    <th>
+                        <img src="{{imageUrl}}" alt="{{name}}" width="100px" height="100px">
+                    </th>
+                    <th>
+                        <form action="/delete/{{id}}" method="post">
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Ban co chac chan muon xoa?')">Delete</button>
+                        </form>
+                    </th>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
