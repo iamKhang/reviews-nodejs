@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Paper</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="d-flex justify-content-between align-items-center mt-4">
+            <h1>List Paper</h1>
+            <a href="/create" class="btn btn-primary">
+                Add Paper
+            </a>
+        </header>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ISBN</th>
+                        <th>Name</th>
+                        <th>Publisher</th>
+                        <th>Author</th>
+                        <th>Publish Year</th>
+                        <th>Image</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each papers}}
+                    <tr>
+                        <td>{{isbn}}</td>
+                        <td>{{name}}</td>
+                        <td>{{publisher}}</td>
+                        <td>{{author}}</td>
+                        <td>{{publishYear}}</td>
+                        <td>
+                            <img src="{{imageUrl}}" alt="{{name}}" width="50" height="50">
+                        </td>
+                        <td>
+                            <form action="/delete/{{isbn}}" method="post">
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Ban co chac chan muon xoa?')">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

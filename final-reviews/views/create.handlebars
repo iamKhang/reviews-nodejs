@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Paper</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="d-flex justify-content-between align-items-center mt-4">
+            <h1>Add Paper</h1>
+            <a href="/" class="btn btn-primary">
+                List Paper
+            </a>
+        </header>
+        <form action="/create" method="post" enctype="multipart/form-data">
+            <div class="mt-3 form-group">
+                <label for="" class="form-label text-bold">ISBN:</label>
+                <input type="text" class="form-control" name="isbn" value="{{data.isbn}}">
+                {{#if (lookup errors 'isbn')}}
+                <p class="text-danger">{{lookup errors 'isbn'}}</p>
+                {{/if}}
+            </div>
+            <div class="mt-3 form-group">
+                <label for="" class="form-label text-bold">Name:</label>
+                <input type="text" class="form-control" name="name" value="{{data.name}}">
+                {{#if (lookup errors 'name')}}
+                <p class="text-danger">{{lookup errors 'name'}}</p>
+                {{/if}}
+            </div>
+            <div class="mt-3 form-group">
+                <label for="" class="form-label text-bold">Publisher:</label>
+                <input type="text" class="form-control" name="publisher" value="{{data.publisher}}">
+                {{#if (lookup errors 'publisher')}}
+                <p class="text-danger">{{lookup errors 'publisher'}}</p>
+                {{/if}}
+            </div>
+            <div class="mt-3 form-group">
+                <label for="" class="form-label text-bold">Publish Year:</label>
+                <input type="text" class="form-control" name="publishYear" value="{{data.publishYear}}">
+                {{#if (lookup errors 'publishYear')}}
+                <p class="text-danger">{{lookup errors 'publishYear'}}</p>
+                {{/if}}
+            </div>
+            <div class="mt-3 form-group">
+                <label for="" class="form-label text-bold">Author:</label>
+                <input type="text" class="form-control" name="author" value="{{data.author}}">
+                {{#if (lookup errors 'author')}}
+                <p class="text-danger">{{lookup errors 'author'}}</p>
+                {{/if}}
+            </div>
+            <div class="mt-3 form-group">
+                <label for="" class="form-label text-bold">Image:</label>
+                <input type="file" accept="image/*" class="form-control" name="image">
+                {{#if (lookup errors 'image')}}
+                <p class="text-danger">{{lookup errors 'iamge'}}</p>
+                {{/if}}
+            </div>
+            <button type="submit" class="mt-4 btn btn-primary">Add Paper</button>
+        </form>
+    </div>
+</body>
+
+</html>
